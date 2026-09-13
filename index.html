@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 7 September</title>
+<title>Bewdley Bootcamp — Week of 14 September</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,7 +203,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 7 – Sun 13 Sep</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 14 – Sun 20 Sep</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -246,31 +246,30 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 7 – Sun 13 Sep",
+  range:"Mon 14 – Sun 20 Sep",
   days:[
-    { day:"Mon", date:"7 Sep", kindLabel:"Strength",
-      title:"Deadlift + 9 Rounds",
-      tags:["Barbell · Kettlebells · Plates · Dumbbells","Percentage work"],
+    { day:"Mon", date:"14 Sep", kindLabel:"Conditioning",
+      title:"Partner Flow + Ladder",
+      tags:["Kettlebells · Rower","Partner session"],
       blocks:[
-        { label:"Block A", name:"Deadlift", how:"Three sets of five.",
-          moves:[{name:"Barbell Deadlift", pre:"3 × 5", note:"72.5% of 1RM"}]},
-        { label:"Block B", name:"9 Rounds For Time", how:"Three triplets, three rounds each. One clock across the lot.",
+        { label:"Block A", name:"Kettlebell Flow — In Pairs", how:"You go, I go. Three rounds each.",
           moves:[
-            {pos:"1", name:"USA KB Swings", sub:"3 rounds of this pair", pre:"× 10"},
-            {pos:"1", name:"Box Jumps", pre:"× 5"},
-            {pos:"2", name:"Plate Ground to Overhead", sub:"3 rounds of this pair", pre:"× 15"},
-            {pos:"2", name:"Plate Jumping Jacks", pre:"× 15"},
-            {pos:"3", name:"DB Deadlifts", sub:"3 rounds of this pair", pre:"× 15"},
-            {pos:"3", name:"DB Double Leg Overs", sub:"10 each side, 20 total", pre:"× 10"}
+            {pos:"1", name:"KB Swings", pre:"× 10"},
+            {pos:"2", name:"KB Gunslingers", sub:"5 each side", pre:"× 10"},
+            {pos:"3", name:"KB Pull Throughs", pre:"× 10"}
           ],
-          foot:"<b>Finish all three rounds of a pair</b> before moving to the next one. Nine rounds in total."}
+          foot:"<b>Your partner's round is your rest.</b> Three rounds each, straight through the flow."},
+        { label:"Block B", name:"Rower — In Pairs", how:"You go, I go. Three rounds each.",
+          moves:[{name:"Row", pre:"200 / 250m"}]},
+        { label:"Block C", name:"Finisher — Teams of 3 or 4", how:"One working at a time. Reps go 2, 4, 6, 4, 2.",
+          moves:[{name:"Burpee + Lateral Hop Over Line", pre:"2-4-6-4-2"}]}
       ]},
 
-    { day:"Tue", date:"8 Sep", kindLabel:"Bootcamp 45",
-      title:"EMOM 20",
-      tags:[{text:"Back to School · 3/12",mark:true},"45 minutes","Dumbbells"],
+    { day:"Tue", date:"15 Sep", kindLabel:"Bootcamp 45",
+      title:"Every 4 Minutes",
+      tags:[{text:"Back to School · 5/12",mark:true},"45 minutes","Dumbbells"],
       blocks:[
-        { label:"Main piece", name:"EMOM × 20 Minutes", how:"Every minute on the minute, five movements rotating. Four rounds through.",
+        { label:"Main piece", name:"Every 4 Minutes × 4 Rounds", how:"Sixteen minutes. Work through all five movements inside each four-minute window.",
           moves:[
             {pos:"1", name:"Air Squats", pre:"× 15"},
             {pos:"2", name:"Incline Press Ups", pre:"× 15"},
@@ -278,90 +277,93 @@ const WEEK = {
             {pos:"4", name:"DB Floor Press", pre:"× 12"},
             {pos:"5", name:"Dead Bugs", pre:"× 10"}
           ],
-          foot:"<b>Whatever's left of the minute is your rest.</b> If you're not finishing inside the minute, drop the reps rather than run over."}
-      ]},
-
-    { day:"Wed", date:"9 Sep", kindLabel:"Strength",
-      title:"Back Squats + Carries",
-      tags:["Barbell · Sandbag · Kettlebells","Percentage work"],
-      blocks:[
-        { label:"Block A", name:"Back Squats", how:"Five sets of five, climbing.",
-          moves:[{name:"Back Squat", pre:"5 × 5", note:"70 · 70 · 75 · 75 · 77.5%"}]},
-        { label:"Block B", name:"Loaded Carries", how:"Three sets of each.",
+          foot:"<b>Whatever's left of the four minutes is your rest.</b> Same movements as last week — the clock is the progression."},
+        { label:"Finisher", name:"Hollow + Arch", how:"3 rounds.",
           moves:[
-            {name:"Sandbag Walking Lunges", pre:"3 × 10m"},
-            {name:"KB Carry", pre:"3 × 150m"}
+            {pos:"1", name:"Hollow Hold", pre:"20s"},
+            {pos:"2", name:"Arch / Superman Hold", pre:"20s"},
+            {pos:"3", name:"Rest", pre:"20s"}
           ]}
       ]},
 
-    { day:"Thu", date:"10 Sep", kindLabel:"Bootcamp 45",
-      title:"Deadlift vs RDL",
-      tags:[{text:"Back to School · 4/12",mark:true},"45 minutes","Kettlebells · Dumbbells · TRX"],
+    { day:"Wed", date:"16 Sep", kindLabel:"Strength",
+      title:"Landmine Press + Circuit",
+      tags:["Landmine · Dumbbells · Cable","Tempo work"],
       blocks:[
-        { label:"Skill", name:"KB Deadlift vs RDL", how:"3 sets of 5 on each — ten reps a set. Same skill as last week, feel the difference between the two.",
+        { label:"Block A", name:"Landmine 2-Handed OHP", how:"Four sets of four.",
+          moves:[{name:"Landmine 2-Handed Overhead Press", pre:"4 × 4", note:"tempo 30X1", tempo:"30X1"}]},
+        { label:"Block B", name:"DB Bench Press", how:"Three sets of twelve — four right, four left, four with both.",
+          moves:[{name:"DB Bench Press", sub:"R × 4, L × 4, both × 4", pre:"3 × 12"}]},
+        { label:"Block C", name:"A/B Circuit", how:"30s work, 30s rest throughout. A comes back between every B movement.",
           moves:[
-            {name:"KB Deadlift", pre:"3 × 5"},
-            {name:"KB RDL", pre:"3 × 5"}
-          ]},
-        { label:"Block B", name:"Superset", how:"4 sets, back to back.",
-          moves:[
-            {name:"KB RDL", pre:"× 10"},
-            {name:"TRX Row", pre:"× 10"}
-          ]},
-        { label:"Block C", name:"Superset", how:"4 sets, back to back.",
-          moves:[
-            {name:"DB Half Kneeling Press", sub:"Each side", pre:"× 5"},
-            {name:"DB Braced Bridges", pre:"× 12"}
-          ]}
+            {pos:"A", name:"DB High Plank", pre:"30s"},
+            {pos:"B1", name:"Tricep Pushdown", pre:"30s"},
+            {pos:"B2", name:"DB Curls", pre:"30s"},
+            {pos:"B3", name:"Russian Twists", pre:"30s"}
+          ],
+          foot:"<b>Order:</b> A → rest → B1 → rest → A → rest → B2 → rest → A → rest → B3 → rest. That's one round — repeat for 2 rounds, no break between them."}
       ]},
 
-    { day:"Fri", date:"11 Sep", kindLabel:"Strength",
-      title:"Overhead Press + Accessories",
-      tags:["Barbell · Dumbbells","Progress on 2 Sep"],
+    { day:"Thu", date:"17 Sep", kindLabel:"Bootcamp 45",
+      title:"AMRAP 20",
+      tags:[{text:"Back to School · 6/12",mark:true},"45 minutes","Kettlebells · Dumbbells · TRX"],
       blocks:[
-        { label:"Block A", name:"Barbell OHP", how:"Five sets of five. Add weight or volume on what you did on 2 September.",
-          moves:[{name:"Barbell Overhead Press", pre:"5 × 5"}],
-          foot:"<b>Worked example:</b> if your final set was 30kg last time, aim for 32.5kg — or repeat 30kg for two or three sets instead."},
+        { label:"Main piece", name:"AMRAP 20 Minutes", how:"Steady pace. This one is about keeping moving, not redlining.",
+          moves:[
+            {pos:"1", name:"KB RDL", pre:"× 8"},
+            {pos:"2", name:"TRX Row", pre:"× 8"},
+            {pos:"3", name:"Half Kneeling DB Press", sub:"4 each side", pre:"× 8"},
+            {pos:"4", name:"Suitcase Carry", pre:"40m"}
+          ],
+          foot:"<b>Steady pace.</b> Pick loads you can come back to in round six as easily as round one."}
+      ]},
+
+    { day:"Fri", date:"18 Sep", kindLabel:"Strength",
+      title:"Back Squats + Accessories",
+      tags:["Barbell · Dumbbells","Percentage work"],
+      blocks:[
+        { label:"Block A", name:"Back Squats", how:"Four sets of three, climbing.",
+          moves:[{name:"Back Squat", pre:"4 × 3", note:"72.5 · 75 · 77.5 · 80%"}]},
         { label:"Block B", name:"Accessories", how:"Three sets of each.",
           moves:[
-            {name:"Alternating DB Bench Press", pre:"3 × 12"},
-            {name:"Alternating Gorilla Rows", pre:"3 × 12-16"},
-            {name:"DB Hammer Curl & Press", pre:"3 × 10"},
-            {name:"Prone Overhead Press", pre:"3 × 15"}
+            {name:"DB Step Ups", pre:"3 × 12"},
+            {name:"Low Plank", pre:"3 × 30-40s"}
           ]}
       ]},
 
-    { day:"Sat", date:"12 Sep", kindLabel:"Conditioning",
-      title:"Landmine + Partner Rounds",
-      tags:["Landmine · Kettlebells","Partner session"],
+    { day:"Sat", date:"19 Sep", kindLabel:"Strength",
+      title:"Bench + Conditioning",
+      tags:["Barbell · Dumbbells · Rower","Descending reps"],
       blocks:[
-        { label:"Block A", name:"Landmine Pair", how:"Three sets of each, six reps a side.",
+        { label:"Block A", name:"Barbell Bench Press", how:"Descending reps — 10, 8, 6, 4, 2. Add weight as they come down.",
+          moves:[{name:"Barbell Bench Press", pre:"10-8-6-4-2"}]},
+        { label:"Block B", name:"Superset", how:"3 rounds, back to back.",
           moves:[
-            {name:"Landmine Rotational Press", sub:"Each side", pre:"3 × 6"},
-            {name:"Landmine Reverse Lunges", sub:"Each side", pre:"3 × 6"}
+            {name:"DB Single Arm Rows", sub:"Each side", pre:"× 6"},
+            {name:"DB Pull Overs", pre:"× 8"}
           ]},
-        { label:"Block B", name:"In Pairs — 4 Rounds", how:"Runs together, everything else you go, I go.",
+        { label:"Block C", name:"Finisher — 4 Rounds", how:"",
           moves:[
-            {pos:"1", name:"Run", sub:"Together", pre:"100m"},
-            {pos:"2", name:"Press Ups", sub:"Each, YGIG", pre:"× 10"},
-            {pos:"3", name:"Goblet Squats", sub:"Each, YGIG", pre:"× 10"},
-            {pos:"4", name:"Sit Ups", sub:"Each, YGIG", pre:"× 15"},
-            {pos:"5", name:"Run", sub:"Together", pre:"100m"}
+            {pos:"1", name:"Row", pre:"6 cals"},
+            {pos:"2", name:"Plate Row", pre:"× 12"},
+            {pos:"3", name:"Mountain Climbers", pre:"× 20"}
           ],
-          foot:"<b>Change the order of the three YGIG movements each round.</b> 60 seconds rest between rounds."}
+          foot:"<b>90 seconds rest between rounds.</b>"}
       ]},
 
-    { day:"Sun", date:"13 Sep", kindLabel:"Rest", title:"Rest Day", rest:true }
+    { day:"Sun", date:"20 Sep", kindLabel:"Event", title:"Warrior Games",
+      rest:true, restTitle:"Exclusive Gym - Warrior Games Event",
+      restNote:"Supporters welcome" }
   ],
   glossary:[
-    ["EMOM","Every minute on the minute. Start the next movement when the next minute begins."],
     ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
-    ["For time","Complete the work as fast as you can while the form holds up."],
-    ["USA KB Swing","American swing — the bell finishes overhead rather than at chest height."],
-    ["GTOH","Ground to overhead. Any way you like, as long as it starts on the floor and finishes locked out."],
+    ["AMRAP","As many rounds as possible in the time given. Steady pace on Thursday."],
+    ["30X1","Tempo, written 3-0-x-1. Three seconds lowering, no pause, drive up fast, one second at the top."],
+    ["2-4-6-4-2","A rep ladder. Two reps, then four, then six, then back down."],
+    ["Gunslingers","5 each side — the count in brackets is the split."],
     ["Each side","Do the full set on one side, then repeat on the other."],
     ["RDL","Romanian deadlift. Push the hips back with soft knees."],
-    ["OHP","Overhead press."],
+    ["10-8-6-4-2","Five sets with the reps coming down. Add weight as they do."],
     ["1RM","The heaviest single rep you can lift. The percentages are worked off this."]
   ]
 };
@@ -409,8 +411,8 @@ function select(i){
     + '<h2 class="wk-day__title">'+esc(d.title)+'</h2>';
 
   if(d.rest){
-    panel.innerHTML=h+'<div class="wk-rest"><h3>Nothing on today</h3>'
-      +'<p>Walk, stretch, eat well. Back at it tomorrow.</p></div></section>';
+    panel.innerHTML=h+'<div class="wk-rest"><h3>'+esc(d.restTitle||'Nothing on today')+'</h3>'
+      +'<p>'+esc(d.restNote||'Walk, stretch, eat well. Back at it tomorrow.')+'</p></div></section>';
     return;
   }
 
