@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 28 September</title>
+<title>Bewdley Bootcamp — Week of 5 October</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,7 +203,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 28 Sep – Sun 4 Oct</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 5 – Sun 11 Oct</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -246,122 +246,120 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 28 Sep – Sun 4 Oct",
+  range:"Mon 5 – Sun 11 Oct",
   days:[
-    { day:"Mon", date:"28 Sep", kindLabel:"Strength",
-      title:"Cluster Press + Partner Holds",
-      tags:["Barbell · Plates · Dumbbells","Cluster sets"],
+    { day:"Mon", date:"5 Oct", kindLabel:"Strength",
+      title:"Pause Squats + 4 Rounds",
+      tags:["Barbell · Dumbbells · Kettlebells","Pause work"],
       blocks:[
-        { label:"Block A", name:"Overhead Press", how:"Cluster sets — 3 reps, 20s rest, 2 reps, 20s rest, 1 rep. That's one round.",
-          moves:[{name:"Overhead Press", sub:"6 reps a round, broken 3-2-1", pre:"3 × (3-2-1)"}],
-          foot:"<b>90 seconds between rounds.</b> The short rests let you hold a heavier bar than a straight set of six would."},
-        { label:"Block B", name:"Partner Stations", how:"One holds while the other works. The hold lasts as long as your partner's reps take.",
+        { label:"Block A", name:"Back Squats", how:"Three sets of three. Two second pause at the bottom, no bounce.",
+          moves:[{name:"Back Squat", sub:"2 second pause", pre:"3 × 3", note:"60% of 1RM"}],
+          foot:"<b>The light bar is the point.</b> The pause is doing the work, not the weight."},
+        { label:"Block B", name:"4 Rounds", how:"Work through all four, then rest.",
           moves:[
-            {pos:"1A", name:"Overhead Plate Hold", sub:"Hold while your partner works", pre:"Hold"},
-            {pos:"1B", name:"Air Squats", pre:"× 15"},
-            {pos:"2A", name:"High Plank", sub:"Hold while your partner works", pre:"Hold"},
-            {pos:"2B", name:"Biceps Curls", pre:"× 15"},
-            {pos:"3A", name:"Wall Sit", sub:"Hold while your partner works", pre:"Hold"},
-            {pos:"3B", name:"Mountain Climbers", pre:"× 30"}
+            {pos:"1", name:"Run", pre:"400m"},
+            {pos:"2", name:"DB Bench Press", pre:"× 12"},
+            {pos:"3", name:"KB Gorilla Rows", pre:"× 12"},
+            {pos:"4", name:"Low Plank", pre:"40s"}
           ],
-          foot:"<b>Swap roles, then run the pair a second time</b> before moving to the next station. 30 seconds rest between stations."}
+          foot:"<b>90 seconds rest between rounds.</b>"}
       ]},
 
-    { day:"Tue", date:"29 Sep", kindLabel:"Bootcamp 45",
-      title:"Gymnastics + EMOM",
-      tags:[{text:"Back to School · 9/12",mark:true},"45 minutes","Bodyweight"],
+    { day:"Tue", date:"6 Oct", kindLabel:"Bootcamp 45",
+      title:"Gymnastics + Partner Ladder",
+      tags:[{text:"Back to School · 11/12",mark:true},"45 minutes","Bodyweight · Bands"],
       blocks:[
-        { label:"Skill", name:"Gymnastics Work", how:"Build the shapes before the EMOM.",
+        { label:"Skill", name:"Gymnastics — 3 Options", how:"Three sets. Pick the option that fits where you're at.",
           moves:[
-            {name:"Wall Walk + Hold", sub:"10 second hold at the top", pre:"3 sets"},
-            {name:"Pike Press Up Negatives", sub:"Lower slowly, step back up", pre:"3 × 3"}
+            {pos:"1", name:"Wall Walk + Hold", sub:"10 second hold at the top", pre:"3 sets"},
+            {pos:"2", name:"Head Stand Kick Ups", pre:"3 sets"},
+            {pos:"3", name:"Hand Stand Kick Ups", pre:"3 sets"}
           ]},
-        { label:"Main piece", name:"EMOM 12 Minutes", how:"Every minute on the minute, rotating through the three. Four rounds.",
+        { label:"Also", name:"Pike Press Ups",
+          moves:[{name:"Pike Press Ups", pre:"3 × 3"}]},
+        { label:"Main piece", name:"For Time — In Pairs", how:"30, then 20, then 10 of each. One partner completes the whole round before the other starts.",
           moves:[
-            {pos:"1", name:"Split Squats", sub:"Right", pre:"× 8"},
-            {pos:"2", name:"Split Squats", sub:"Left", pre:"× 8"},
-            {pos:"3", name:"Quadruped Knee Taps", pre:"× 20"}
+            {pos:"1", name:"Resistance Band Curls", pre:"30-20-10"},
+            {pos:"2", name:"Walking Lunges", pre:"30-20-10"},
+            {pos:"3", name:"Russian Twists", pre:"30-20-10"}
           ],
-          foot:"<b>Whatever's left of the minute is your rest.</b>"}
+          foot:"<b>Partner 1 does the full round of 30s, then partner 2.</b> Then both through the 20s, then the 10s. 180 reps each by the end."}
       ]},
 
-    { day:"Wed", date:"30 Sep", kindLabel:"Strength",
-      title:"Deadlift + Intervals",
-      tags:["Barbell · Dumbbells · Plates","Percentage work"],
+    { day:"Wed", date:"7 Oct", kindLabel:"Conditioning",
+      title:"Four Stations",
+      tags:["Rower · Sled · Box","Stations round the gym"],
       blocks:[
-        { label:"Block A", name:"Deadlift", how:"Three sets of five.",
-          moves:[{name:"Barbell Deadlift", pre:"3 × 5", note:"75% of 1RM"}]},
-        { label:"Circuit 1", name:"30/15 Intervals", how:"30s work / 15s rest · 2 rounds.",
+        { label:"Format", name:"One At A Time", how:"Stations are spread around the gym. Finish one, rest 2–3 minutes, then on to the next.",
           moves:[
-            {pos:"1", name:"DB Snatches", pre:"30 / 15"},
-            {pos:"2", name:"Russian Twists", pre:"30 / 15"},
-            {pos:"3", name:"Press Up + 2 Shoulder Taps", pre:"30 / 15"}
-          ]},
-        { label:"Circuit 2", name:"30/15 Intervals", how:"30s work / 15s rest · 2 rounds.",
-          moves:[
-            {pos:"1", name:"Plate Ground to Overhead", pre:"30 / 15"},
-            {pos:"2", name:"Plate Hops", pre:"30 / 15"},
-            {pos:"3", name:"Dead Bugs", pre:"30 / 15"}
-          ]}
-      ]},
-
-    { day:"Thu", date:"1 Oct", kindLabel:"Bootcamp 45",
-      title:"Swing Ladder",
-      tags:[{text:"Back to School · 10/12",mark:true},"45 minutes","Kettlebells · TRX · Dumbbells"],
-      blocks:[
-        { label:"Skill", name:"KB Swings", how:"Quick recap of the swing before we load it.",
-          moves:[{name:"KB Swing", sub:"Technique recap", pre:"Skill"}]},
-        { label:"Main piece", name:"3 Rounds", how:"Swings drop as you go — 12, then 10, then 8 — with a different movement after each.",
-          moves:[
-            {pos:"1", name:"KB Swings", pre:"× 12"},
-            {pos:"2", name:"TRX Rows", pre:"× 12"},
-            {pos:"3", name:"KB Swings", pre:"× 10"},
-            {pos:"4", name:"Walking Lunges", pre:"× 10"},
-            {pos:"5", name:"KB Swings", pre:"× 8"},
-            {pos:"6", name:"DB Floor Press", pre:"× 8"}
+            {pos:"1", name:"Row", pre:"50 cals"},
+            {pos:"2", name:"Body Rows", pre:"× 75"},
+            {pos:"3", name:"Sled Push", pre:"100m"},
+            {pos:"4", name:"Box Step Ups", pre:"× 125"}
           ],
-          foot:"<b>60 seconds rest between rounds.</b> 30 swings a round, 90 across the session — pick a bell you can still hinge properly with in round three."}
+          foot:"<b>Rest 2–3 minutes between stations.</b> The numbers climb as you go — pace the rower or the step ups will hurt."}
       ]},
 
-    { day:"Fri", date:"2 Oct", kindLabel:"Strength",
-      title:"Back Squats + Pyramid",
-      tags:["Barbell · Dumbbells","Percentage work"],
+    { day:"Thu", date:"8 Oct", kindLabel:"Bootcamp 45",
+      title:"Final Session",
+      tags:[{text:"Back to School · 12/12",mark:true},"Last of the block","45 minutes"],
       blocks:[
-        { label:"Block A", name:"Back Squats", how:"Five sets of three, climbing.",
-          moves:[{name:"Back Squat", pre:"5 × 3", note:"75 · 80 · 80 · 85 · 85%"}]},
-        { label:"Block B", name:"Accessory",
-          moves:[{name:"RDLs", pre:"3 × 6"}]},
-        { label:"Block C", name:"Shuttle Run Pyramid", how:"Up and back down — 2, 4, 6, 8, then 6, 4, 2.",
-          moves:[{name:"Shuttle Runs", pre:"2-4-6-8-6-4-2"}]}
-      ]},
-
-    { day:"Sat", date:"3 Oct", kindLabel:"Strength",
-      title:"Bench + For Time",
-      tags:["Barbell · Dumbbells · Med Ball","Cluster sets"],
-      blocks:[
-        { label:"Block A", name:"Bench Press", how:"Cluster sets — 3 reps, 20s rest, 2 reps, 20s rest, 1 rep. That's one round.",
-          moves:[{name:"Bench Press", sub:"6 reps a round, broken 3-2-1", pre:"3 × (3-2-1)"}]},
-        { label:"Block B", name:"For Time", how:"Descending rounds — 15, 12, 9, 6 of each.",
+        { label:"Main piece", name:"AMRAP 12 Minutes", how:"Eight reps of everything. Keep the rounds ticking over.",
           moves:[
-            {pos:"1", name:"Med Ball Slams", pre:"15-12-9-6"},
-            {pos:"2", name:"DB Thrusters", pre:"15-12-9-6"},
-            {pos:"3", name:"Ab Wheel Roll Outs", sub:"Every round, regardless", pre:"× 2"}
+            {pos:"1", name:"DB RDLs", pre:"× 8"},
+            {pos:"2", name:"Press Ups", pre:"× 8"},
+            {pos:"3", name:"KB Swings", pre:"× 8"},
+            {pos:"4", name:"Abmat Sit Ups", pre:"× 8"}
           ],
-          foot:"<b>The ab wheel stays at 2 reps every round</b> — it's a quality movement, not a rep count to chase."}
+          foot:"<b>Last session of Back to School.</b> Twelve weeks in — every movement here is one you've built across the block. Write the score down."}
       ]},
 
-    { day:"Sun", date:"4 Oct", kindLabel:"Rest", title:"Rest Day", rest:true }
+    { day:"Fri", date:"9 Oct", kindLabel:"Test Day",
+      title:"3 Rep Max",
+      tags:[{text:"Retest · vs 3 Aug",mark:true},"Barbell","Build to a heavy triple"],
+      blocks:[
+        { label:"Lift 1", name:"Back Squat", how:"Build to the heaviest three you can hold good depth and shape on.",
+          moves:[{name:"Back Squat", pre:"3 Rep Max"}]},
+        { label:"Lift 2", name:"Overhead Press", how:"Same again — heaviest honest triple.",
+          moves:[{name:"Overhead Press", pre:"3 Rep Max"}]},
+        { label:"After", name:"Compare",
+          moves:[{name:"Check against 3 August", sub:"Same two lifts, same test", pre:"Log it"}],
+          foot:"<b>Both numbers go in the tracker.</b> This is what the last nine weeks of percentage work was for — the percentages from here run off today's number."}
+      ]},
+
+    { day:"Sat", date:"10 Oct", kindLabel:"Strength",
+      title:"Bent Over Row + Blocks",
+      tags:["Barbell · Dumbbells · Kettlebells","9 minutes of work"],
+      blocks:[
+        { label:"Block A", name:"Barbell Bent Over Row", how:"Descending reps — 8, 6, 4, 4. Add weight as they come down.",
+          moves:[{name:"Barbell Bent Over Row", pre:"8-6-4-4"}]},
+        { label:"Block B", name:"9 Minutes — 3 Blocks", how:"Three minutes on each pair, alternating between the two for the whole block.",
+          moves:[
+            {pos:"0-3", name:"Inch Worms", pre:"× 3"},
+            {pos:"0-3", name:"KB SDLHP", pre:"× 10"},
+            {pos:"3-6", name:"DB Single Arm Row", sub:"Each side", pre:"× 5"},
+            {pos:"3-6", name:"KB Pull Throughs", pre:"× 10"},
+            {pos:"6-9", name:"Burpees", pre:"× 3"},
+            {pos:"6-9", name:"Air Squats", pre:"× 10"}
+          ],
+          foot:"<b>Keep alternating within each three-minute block</b> — as many times through the pair as you can, then straight into the next pair."}
+      ]},
+
+    { day:"Sun", date:"11 Oct", kindLabel:"Run Club", title:"Rise Up Run Club",
+      rest:true, restTitle:"Rise Up Run Club",
+      restNote:"Starts 9.30am" }
   ],
   glossary:[
-    ["Cluster sets","One set broken into blocks with short rests inside it — 3 reps, 20s, 2 reps, 20s, 1 rep. The rests let you hold more weight across the six."],
-    ["EMOM","Every minute on the minute. Start the next movement when the next minute begins."],
+    ["3 Rep Max","The heaviest three reps you can do with the form holding. Not a grind — if the third rep breaks down, that's not your number."],
+    ["2s pause","Hold still at the bottom for two full seconds before standing. No bounce out of the hole."],
+    ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
+    ["AMRAP","As many rounds as possible in the time given."],
+    ["30-20-10","Three rounds with the reps coming down each time."],
+    ["SDLHP","Sumo deadlift high pull. Wide stance, pull from the floor to under the chin, elbows leading."],
+    ["Inch Worm","Hands to the floor, walk out to a plank, walk the feet back in."],
+    ["Pull Throughs","Bell on the floor between your feet, hinge and pass it behind and through from hand to hand."],
     ["Wall Walk","Feet on the wall, hands walking in towards it until you're near vertical. Hold, then walk back out."],
-    ["Negatives","Only the lowering half of the rep, done slowly. Step or assist yourself back to the top."],
-    ["GTOH","Ground to overhead. Any way you like, as long as it starts on the floor and finishes locked out."],
-    ["15-12-9-6","Four rounds with the reps coming down each time."],
-    ["For time","Complete the work as fast as you can while the form holds up."],
-    ["RDL","Romanian deadlift. Push the hips back with soft knees."],
-    ["1RM","The heaviest single rep you can lift. The percentages are worked off this."]
+    ["RDL","Romanian deadlift. Push the hips back with soft knees."]
   ]
 };
 
