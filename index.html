@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 5 October</title>
+<title>Bewdley Bootcamp — Week of 12 October</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,6 +172,46 @@ p{margin:0 0 var(--sp-4)}
   background:var(--forest-deep);border-color:var(--forest-deep);color:var(--off-white)}
 .wk-cta--top:hover{background:var(--forest-mid);border-color:var(--forest-mid)}
 
+/* ——— Jump to levels ——— */
+.wk-jump{appearance:none;cursor:pointer;display:inline-block;
+  margin:var(--sp-2) 0 var(--sp-4);padding:.6rem 1.1rem;
+  background:var(--surface);border:2px solid var(--forest-deep);border-radius:var(--radius-sm);
+  color:var(--forest-deep);font-family:var(--font-display);font-size:1.05rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+  transition:background-color .18s var(--ease),color .18s var(--ease)}
+.wk-jump:hover{background:var(--forest-deep);color:var(--off-white)}
+
+/* ——— Couch to Pull Up levels appendix ——— */
+.wk-levels{background:var(--surface);border:2px solid var(--forest-deep);border-radius:var(--radius);
+  padding:var(--sp-4);margin-bottom:var(--sp-4);scroll-margin-top:72px}
+.wk-levels summary{cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:800;
+  font-size:1.4rem;text-transform:uppercase;letter-spacing:var(--tracking-display);
+  color:var(--forest-deep);display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3)}
+.wk-levels summary::-webkit-details-marker{display:none}
+.wk-levels summary::after{content:'+';font-weight:700}
+.wk-levels[open] summary::after{content:'\2013'}
+.wk-levels__sub{display:block;font-family:var(--font-body);font-size:var(--fs-small);
+  font-weight:500;color:var(--ink-muted);text-transform:none;letter-spacing:0;margin-top:var(--sp-1)}
+.wk-levels__intro{margin:var(--sp-4) 0 var(--sp-5);font-size:var(--fs-small);color:var(--ink-muted)}
+.wk-lvl{border-top:2px solid var(--forest-deep);padding:var(--sp-4) 0}
+.wk-lvl:last-child{padding-bottom:0}
+.wk-lvl__head{display:flex;align-items:baseline;gap:var(--sp-3);flex-wrap:wrap}
+.wk-lvl__badge{font-family:var(--font-display);font-weight:800;font-size:1rem;letter-spacing:.06em;
+  background:var(--forest-deep);color:var(--off-white);border-radius:var(--radius-sm);padding:.15rem .5rem}
+.wk-lvl__name{font-family:var(--font-display);font-weight:800;font-size:1.35rem;
+  text-transform:uppercase;letter-spacing:var(--tracking-display);color:var(--forest-deep)}
+.wk-lvl__placed{width:100%;font-size:var(--fs-small);color:var(--ink-muted);margin-top:var(--sp-1)}
+.wk-lvl__grid{display:grid;gap:var(--sp-3);margin-top:var(--sp-3)}
+.wk-lvl__day{background:var(--chalk);border-radius:var(--radius-sm);padding:var(--sp-3)}
+.wk-lvl__dayname{font-family:var(--font-body);font-size:var(--fs-eyebrow);font-weight:700;
+  letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--forest-deep);
+  display:block;margin-bottom:var(--sp-2)}
+.wk-lvl__day ul{margin:0;padding-left:1.1rem;font-size:var(--fs-small);color:var(--forest-deep)}
+.wk-lvl__day li{margin-bottom:.2rem}
+.wk-lvl__up{margin:var(--sp-3) 0 0;font-size:var(--fs-small);color:var(--ink-muted)}
+.wk-lvl__up b{color:var(--forest-deep);font-weight:700}
+@media (min-width:640px){.wk-lvl__grid{grid-template-columns:1fr 1fr}}
+
 /* ——— Signature: slash marquee ——— */
 .bb-marquee{overflow:hidden;background:var(--amber);transform:rotate(var(--slash-angle)) scale(1.06);
   padding:var(--sp-3) 0;margin:var(--sp-7) 0 var(--sp-6);user-select:none}
@@ -203,7 +243,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 5 – Sun 11 Oct</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 12 – Sun 18 Oct</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -215,6 +255,11 @@ p{margin:0 0 var(--sp-4)}
 <main class="bb-wrap" id="wk-day" role="tabpanel" aria-live="polite"></main>
 
 <div class="bb-wrap">
+  <details class="wk-levels" id="wk-levels">
+    <summary><span id="wk-levels-title">Your Level</span></summary>
+    <div id="wk-levels-body"></div>
+  </details>
+
   <details class="wk-gloss">
     <summary>Shorthand</summary>
     <dl id="wk-gloss"></dl>
@@ -246,119 +291,160 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 5 – Sun 11 Oct",
+  range:"Mon 12 – Sun 18 Oct",
   days:[
-    { day:"Mon", date:"5 Oct", kindLabel:"Strength",
-      title:"Pause Squats + 4 Rounds",
-      tags:["Barbell · Dumbbells · Kettlebells","Pause work"],
+    { day:"Mon", date:"12 Oct", kindLabel:"Strength",
+      title:"Deadlift + Grip",
+      tags:["Barbell · Dumbbells · Plates","Percentage work"],
       blocks:[
-        { label:"Block A", name:"Back Squats", how:"Three sets of three. Two second pause at the bottom, no bounce.",
-          moves:[{name:"Back Squat", sub:"2 second pause", pre:"3 × 3", note:"60% of 1RM"}],
-          foot:"<b>The light bar is the point.</b> The pause is doing the work, not the weight."},
-        { label:"Block B", name:"4 Rounds", how:"Work through all four, then rest.",
-          moves:[
-            {pos:"1", name:"Run", pre:"400m"},
-            {pos:"2", name:"DB Bench Press", pre:"× 12"},
-            {pos:"3", name:"KB Gorilla Rows", pre:"× 12"},
-            {pos:"4", name:"Low Plank", pre:"40s"}
-          ],
-          foot:"<b>90 seconds rest between rounds.</b>"}
+        { label:"Block A", name:"Deadlift", how:"Four sets of six.",
+          moves:[{name:"Barbell Deadlift", pre:"4 × 6", note:"70% of 1RM"}]},
+        { label:"Block B", name:"Legs",
+          moves:[{name:"DB Reverse Lunges", pre:"3 × 12"}]},
+        { label:"Block C", name:"Grip", how:"Pinch the plates between thumb and fingers. Don't hook them.",
+          moves:[{name:"Plate Pinch Grip Hold", pre:"3 × 20-30s"}],
+          foot:"<b>Grip work starts here for a reason.</b> The next four weeks are a pull-up block — everything hangs off your hands."}
       ]},
 
-    { day:"Tue", date:"6 Oct", kindLabel:"Bootcamp 45",
-      title:"Gymnastics + Partner Ladder",
-      tags:[{text:"Back to School · 11/12",mark:true},"45 minutes","Bodyweight · Bands"],
+    { day:"Tue", date:"13 Oct", kindLabel:"Test Day",
+      title:"The Hang Test",
+      tags:[{text:"Couch to Pull Up · 1/8",mark:true},"45 minutes","Sets your level for the block"],
+      jump:true,
       blocks:[
-        { label:"Skill", name:"Gymnastics — 3 Options", how:"Three sets. Pick the option that fits where you're at.",
+        { label:"The test", name:"Three Attempts", how:"Full rest between each. Give each one everything — this number decides where you start.",
           moves:[
-            {pos:"1", name:"Wall Walk + Hold", sub:"10 second hold at the top", pre:"3 sets"},
-            {pos:"2", name:"Head Stand Kick Ups", pre:"3 sets"},
-            {pos:"3", name:"Hand Stand Kick Ups", pre:"3 sets"}
+            {pos:"1", name:"Max Dead Hang", sub:"Then 2 minutes rest", pre:"Max"},
+            {pos:"2", name:"Max Chin Over Bar Hold", sub:"Then 2 minutes rest", pre:"Max"},
+            {pos:"3", name:"Max Pull Ups", pre:"Max"}
+          ],
+          foot:"<b>Zero is a legitimate score. So is doing all of it with assistance.</b> This isn't a test you pass or fail — it's how we work out which version of the programme you run for the next four weeks."},
+        { label:"Then", name:"30/30 Intervals", how:"30s work / 30s rest · 2 rounds.",
+          moves:[
+            {pos:"1", name:"KB 2 Hand Cleans", pre:"30 / 30"},
+            {pos:"2", name:"Alternating DB Overhead Press", pre:"30 / 30"},
+            {pos:"3", name:"Low Plank", pre:"30 / 30"}
+          ]}
+      ]},
+
+    { day:"Wed", date:"14 Oct", kindLabel:"Conditioning",
+      title:"Cards Against Fitness",
+      tags:["Kettlebells · Plates","Luck of the draw"],
+      blocks:[
+        { label:"The deck", name:"Suit = Exercise", how:"Turn a card. The suit tells you the movement, the number tells you the reps.",
+          moves:[
+            {pos:"♥", name:"Squats", pre:"Card value"},
+            {pos:"♦", name:"Jumping Jacks", pre:"Card value"},
+            {pos:"♣", name:"KB Swings", pre:"Card value"},
+            {pos:"♠", name:"Plate Ground to Overhead", pre:"Card value"},
+            {pos:"★", name:"Burpees", sub:"Jokers", pre:"× 5"}
+          ],
+          foot:"<b>Aces low — an ace is 1.</b> Jack is 11, Queen 12, King 13. Work through the deck."}
+      ]},
+
+    { day:"Thu", date:"15 Oct", kindLabel:"Bootcamp 45",
+      title:"Rows & Holds",
+      tags:[{text:"Couch to Pull Up · 2/8",mark:true},"45 minutes","Work from your level"],
+      jump:true,
+      blocks:[
+        { label:"Main piece", name:"Superset — Every 90s × 3 Rounds", how:"Your level sets the variation. Missed Tuesday's test? Take your best guess and a coach will adjust you in class.",
+          moves:[
+            {pos:"A1", name:"Row Variation", sub:"See your level below", pre:"Per level"},
+            {pos:"A2", name:"Hold Variation", sub:"See your level below", pre:"Per level"}
+          ],
+          foot:"<b>Coaches will walk through the variations in class.</b> Nobody needs to work this out on their own."},
+        { label:"Finisher", name:"HIIT Couplets", how:"8 × 20s work / 10s rest, alternating between the pair.",
+          moves:[
+            {pos:"1A", name:"Goblet Squats", pre:"20 / 10"},
+            {pos:"1B", name:"Plank Shoulder Taps", pre:"20 / 10"},
+            {pos:"2A", name:"Side Skaters", pre:"20 / 10"},
+            {pos:"2B", name:"KB Hip 2 Halos", pre:"20 / 10"}
+          ],
+          foot:"<b>2 minutes rest between the two couplets.</b>"}
+      ]},
+
+    { day:"Fri", date:"16 Oct", kindLabel:"Strength",
+      title:"Rows + Bench",
+      tags:["Barbell · Dumbbells","Build to a heavy 5"],
+      blocks:[
+        { label:"Block A", name:"Barbell Bent Over Rows", how:"Ten to twelve minutes to build to a heavy five.",
+          moves:[{name:"Barbell Bent Over Row", pre:"Heavy 5"}],
+          foot:"<b>Write this number down.</b> It's the reference point for the next few weeks."},
+        { label:"Block B", name:"Bench Press", how:"Four sets of five. Two seconds lowering on every rep.",
+          moves:[{name:"Barbell Bench Press", sub:"2 second negative", pre:"4 × 5"}]},
+        { label:"Block C", name:"Superset", how:"3 sets, back to back.",
+          moves:[
+            {name:"Biceps Curls", pre:"× 15"},
+            {name:"Lateral Raises", pre:"× 10"}
+          ]}
+      ]},
+
+    { day:"Sat", date:"17 Oct", kindLabel:"Strength",
+      title:"Landmine + Accessories",
+      tags:["Landmine · Dumbbells · Bands","Volume day"],
+      blocks:[
+        { label:"Block A", name:"Press Pair",
+          moves:[
+            {name:"Half Kneeling Landmine Press", sub:"Each side", pre:"4 × 6-8"},
+            {name:"Resistance Band Triceps Pushdown", pre:"3 × 15"}
           ]},
-        { label:"Also", name:"Pike Press Ups",
-          moves:[{name:"Pike Press Ups", pre:"3 × 3"}]},
-        { label:"Main piece", name:"For Time — In Pairs", how:"30, then 20, then 10 of each. One partner completes the whole round before the other starts.",
+        { label:"Block B", name:"Legs",
           moves:[
-            {pos:"1", name:"Resistance Band Curls", pre:"30-20-10"},
-            {pos:"2", name:"Walking Lunges", pre:"30-20-10"},
-            {pos:"3", name:"Russian Twists", pre:"30-20-10"}
-          ],
-          foot:"<b>Partner 1 does the full round of 30s, then partner 2.</b> Then both through the 20s, then the 10s. 180 reps each by the end."}
-      ]},
-
-    { day:"Wed", date:"7 Oct", kindLabel:"Conditioning",
-      title:"Four Stations",
-      tags:["Rower · Sled · Box","Stations round the gym"],
-      blocks:[
-        { label:"Format", name:"One At A Time", how:"Stations are spread around the gym. Finish one, rest 2–3 minutes, then on to the next.",
+            {name:"DB RDL", pre:"4 × 6-8"},
+            {name:"Walking Lunges", pre:"3 × 16 steps"}
+          ]},
+        { label:"Block C", name:"Back + Core",
           moves:[
-            {pos:"1", name:"Row", pre:"50 cals"},
-            {pos:"2", name:"Body Rows", pre:"× 75"},
-            {pos:"3", name:"Sled Push", pre:"100m"},
-            {pos:"4", name:"Box Step Ups", pre:"× 125"}
-          ],
-          foot:"<b>Rest 2–3 minutes between stations.</b> The numbers climb as you go — pace the rower or the step ups will hurt."}
+            {name:"DB Pull Overs", pre:"3 × 8"},
+            {name:"Dead Bugs", pre:"3 × 20"}
+          ]}
       ]},
 
-    { day:"Thu", date:"8 Oct", kindLabel:"Bootcamp 45",
-      title:"Final Session",
-      tags:[{text:"Back to School · 12/12",mark:true},"Last of the block","45 minutes"],
-      blocks:[
-        { label:"Main piece", name:"AMRAP 12 Minutes", how:"Eight reps of everything. Keep the rounds ticking over.",
-          moves:[
-            {pos:"1", name:"DB RDLs", pre:"× 8"},
-            {pos:"2", name:"Press Ups", pre:"× 8"},
-            {pos:"3", name:"KB Swings", pre:"× 8"},
-            {pos:"4", name:"Abmat Sit Ups", pre:"× 8"}
-          ],
-          foot:"<b>Last session of Back to School.</b> Twelve weeks in — every movement here is one you've built across the block. Write the score down."}
-      ]},
-
-    { day:"Fri", date:"9 Oct", kindLabel:"Test Day",
-      title:"3 Rep Max",
-      tags:[{text:"Retest · vs 3 Aug",mark:true},"Barbell","Build to a heavy triple"],
-      blocks:[
-        { label:"Lift 1", name:"Back Squat", how:"Build to the heaviest three you can hold good depth and shape on.",
-          moves:[{name:"Back Squat", pre:"3 Rep Max"}]},
-        { label:"Lift 2", name:"Overhead Press", how:"Same again — heaviest honest triple.",
-          moves:[{name:"Overhead Press", pre:"3 Rep Max"}]},
-        { label:"After", name:"Compare",
-          moves:[{name:"Check against 3 August", sub:"Same two lifts, same test", pre:"Log it"}],
-          foot:"<b>Both numbers go in the tracker.</b> This is what the last nine weeks of percentage work was for — the percentages from here run off today's number."}
-      ]},
-
-    { day:"Sat", date:"10 Oct", kindLabel:"Strength",
-      title:"Bent Over Row + Blocks",
-      tags:["Barbell · Dumbbells · Kettlebells","9 minutes of work"],
-      blocks:[
-        { label:"Block A", name:"Barbell Bent Over Row", how:"Descending reps — 8, 6, 4, 4. Add weight as they come down.",
-          moves:[{name:"Barbell Bent Over Row", pre:"8-6-4-4"}]},
-        { label:"Block B", name:"9 Minutes — 3 Blocks", how:"Three minutes on each pair, alternating between the two for the whole block.",
-          moves:[
-            {pos:"0-3", name:"Inch Worms", pre:"× 3"},
-            {pos:"0-3", name:"KB SDLHP", pre:"× 10"},
-            {pos:"3-6", name:"DB Single Arm Row", sub:"Each side", pre:"× 5"},
-            {pos:"3-6", name:"KB Pull Throughs", pre:"× 10"},
-            {pos:"6-9", name:"Burpees", pre:"× 3"},
-            {pos:"6-9", name:"Air Squats", pre:"× 10"}
-          ],
-          foot:"<b>Keep alternating within each three-minute block</b> — as many times through the pair as you can, then straight into the next pair."}
-      ]},
-
-    { day:"Sun", date:"11 Oct", kindLabel:"Run Club", title:"Rise Up Run Club",
-      rest:true, restTitle:"Rise Up Run Club",
-      restNote:"Starts 9.30am" }
+    { day:"Sun", date:"18 Oct", kindLabel:"Rest", title:"Rest Day", rest:true }
   ],
+
+  levels:{
+    title:"Couch to Pull Up",
+    sub:"Eight sessions over four weeks · Tuesdays and Thursdays",
+    intro:"Tuesday's hang test places you on one of five levels. Find yours below, then work from that row on Tuesday and Thursday. Everyone is doing the same session — only the variation changes.",
+    rows:[
+      { id:"L1", name:"Foundation",
+        placed:"Dead hang under 20 seconds",
+        tue:["20s dead hang, feet lightly on a box","5 box-assisted scap pull-ups"],
+        thu:["A1 — 8 TRX rows, body at about 45°","A2 — 20s bent-knee hollow hold"],
+        up:"You can hold a 30 second dead hang with no foot assistance" },
+      { id:"L2", name:"Hang",
+        placed:"Dead hang 20s+, flexed-arm hang under 5s",
+        tue:["30s dead hang","5 scap pull-ups from a full hang"],
+        thu:["A1 — 8 TRX rows, feet walked forward (body at about 30°)","A2 — 3 × 5s flexed-arm hang, stepping up from a box"],
+        up:"Your flexed-arm hang reaches 5 seconds" },
+      { id:"L3", name:"Negative",
+        placed:"Flexed-arm hang 5–14 seconds",
+        tue:["3 negatives — step up to chin over bar, lower in 5s","If the 5s breaks down, finish with a 15s active hang"],
+        thu:["A1 — 8 TRX rows, feet on a box","A2 — 2 × 10s flexed-arm hang"],
+        up:"Flexed-arm hang hits 15 seconds, or you get 3 clean 5-second negatives" },
+      { id:"L4", name:"Band",
+        placed:"Flexed-arm hang 15s+, no strict pull-up yet",
+        tue:["4 band-assisted pull-ups — lightest band that allows 4 clean reps","1 negative, 8 seconds"],
+        thu:["A1 — 8 each side, heavy KB bent-over row","A2 — 20s flexed-arm hang"],
+        up:"Your first strict pull-up — come and ring the bell" },
+      { id:"L5", name:"Strict",
+        placed:"1 or more strict pull-ups",
+        tue:["1–2 strict pull-ups","1 slow negative, 5 seconds"],
+        thu:["A1 — strict pull-ups, one rep short of max","A2 — 15s top hold, then a 5s negative"],
+        up:"Add reps first, then add a light dumbbell between the feet" }
+    ]
+  },
+
   glossary:[
-    ["3 Rep Max","The heaviest three reps you can do with the form holding. Not a grind — if the third rep breaks down, that's not your number."],
-    ["2s pause","Hold still at the bottom for two full seconds before standing. No bounce out of the hole."],
-    ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
-    ["AMRAP","As many rounds as possible in the time given."],
-    ["30-20-10","Three rounds with the reps coming down each time."],
-    ["SDLHP","Sumo deadlift high pull. Wide stance, pull from the floor to under the chin, elbows leading."],
-    ["Inch Worm","Hands to the floor, walk out to a plank, walk the feet back in."],
-    ["Pull Throughs","Bell on the floor between your feet, hinge and pass it behind and through from hand to hand."],
-    ["Wall Walk","Feet on the wall, hands walking in towards it until you're near vertical. Hold, then walk back out."],
+    ["Dead hang","Hanging from the bar with straight arms and shoulders relaxed. The starting position for everything in this block."],
+    ["Flexed-arm hang","Chin held over the bar with the arms bent. Also called a chin over bar hold."],
+    ["Scap pull-up","Hanging with straight arms, pulling the shoulder blades down and back without bending the elbows. Small movement, big payoff."],
+    ["Negative","Only the lowering half of the rep, done slowly. Step or jump up to the top, then fight the way down."],
+    ["Active hang","A dead hang with the shoulders pulled down away from the ears rather than hanging loose."],
+    ["2s negative","Two seconds lowering the bar on every rep, then press back up normally."],
+    ["Each side","Do the full set on one side, then repeat on the other."],
+    ["GTOH","Ground to overhead. Any way you like, as long as it starts on the floor and finishes locked out."],
+    ["Pinch grip","Holding the plates between thumb and fingers with nothing hooked over the top."],
     ["RDL","Romanian deadlift. Push the hips back with soft knees."]
   ]
 };
@@ -440,6 +526,10 @@ function select(i){
     h+='</article>';
   });
 
+  if(d.jump && WEEK.levels){
+    h+='<button type="button" class="wk-jump" onclick="jumpToLevels()">Find your level \u2193</button>';
+  }
+
   h+='<a class="wk-cta" href="'+WEEK.trackUrl+'" target="_blank" rel="noopener">'
     + 'Click Here to Log Your Weights<span class="wk-cta__sub">'+d.day+' '+d.date+'</span></a>';
 
@@ -451,6 +541,37 @@ function select(i){
     });
   });
 }
+
+/* ——— Levels appendix ——— */
+function jumpToLevels(){
+  const p=document.getElementById('wk-levels');
+  if(!p) return;
+  p.open=true;
+  p.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+(function(){
+  const panel=document.getElementById('wk-levels');
+  if(!panel) return;
+  if(!WEEK.levels){ panel.remove(); return; }
+  const L=WEEK.levels;
+  document.getElementById('wk-levels-title').innerHTML=
+    esc(L.title)+(L.sub?'<span class="wk-levels__sub">'+esc(L.sub)+'</span>':'');
+  let h = L.intro ? '<p class="wk-levels__intro">'+esc(L.intro)+'</p>' : '';
+  L.rows.forEach(r=>{
+    h+='<section class="wk-lvl"><div class="wk-lvl__head">'
+      +'<span class="wk-lvl__badge">'+esc(r.id)+'</span>'
+      +'<span class="wk-lvl__name">'+esc(r.name)+'</span>'
+      +'<span class="wk-lvl__placed">You\'re here if: '+esc(r.placed)+'</span></div>'
+      +'<div class="wk-lvl__grid">'
+      +'<div class="wk-lvl__day"><span class="wk-lvl__dayname">Tuesday — per round</span><ul>'
+      + r.tue.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'
+      +'<div class="wk-lvl__day"><span class="wk-lvl__dayname">Thursday — superset</span><ul>'
+      + r.thu.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>'
+      +'</div><p class="wk-lvl__up"><b>Move up when:</b> '+esc(r.up)+'</p></section>';
+  });
+  document.getElementById('wk-levels-body').innerHTML=h;
+})();
 
 document.getElementById('wk-gloss').innerHTML=
   WEEK.glossary.map(([t,d])=>'<dt>'+esc(t)+'</dt><dd>'+esc(d)+'</dd>').join('');
