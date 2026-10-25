@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 19 October</title>
+<title>Bewdley Bootcamp — Week of 26 October</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,7 +243,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 19 – Sun 25 Oct</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 26 Oct – Sun 1 Nov</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -291,111 +291,112 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 19 – Sun 25 Oct",
+  range:"Mon 26 Oct – Sun 1 Nov",
   days:[
-    { day:"Mon", date:"19 Oct", kindLabel:"Strength",
-      title:"Back Squat + Carries",
-      tags:["Barbell · Kettlebells","Percentage work"],
-      blocks:[
-        { label:"Block A", name:"Back Squat", how:"Three sets of five.",
-          moves:[{name:"Back Squat", pre:"3 × 5", note:"70% of 1RM"}]},
-        { label:"Block B", name:"Every 5 Minutes × 3 Rounds", how:"A carry between every piece of work. Fifteen minutes end to end.",
-          moves:[
-            {pos:"1", name:"KB 2 Hand Cleans", pre:"× 10"},
-            {pos:"2", name:"KB Goblet Carry", pre:"20m"},
-            {pos:"3", name:"KB Pull Throughs", pre:"× 10"},
-            {pos:"4", name:"KB Goblet Carry", pre:"20m"},
-            {pos:"5", name:"KB Leg Overs", pre:"× 20"},
-            {pos:"6", name:"KB Goblet Carry", pre:"20m"}
-          ],
-          foot:"<b>Whatever's left of the five minutes is your rest.</b> One bell for the whole round — pick a weight you can still carry on the third lap."}
-      ]},
-
-    { day:"Tue", date:"20 Oct", kindLabel:"Bootcamp 45",
-      title:"Hang & Lower",
-      tags:[{text:"Couch to Pull Up · 3/8",mark:true},"45 minutes","Work from your level"],
-      jump:true,
-      blocks:[
-        { label:"Main piece", name:"Every 90s × 5 Rounds", how:"Your level sets the work. Missed the test? Take your best guess and a coach will adjust you.",
-          moves:[{name:"Hang & Lower", sub:"See your level below", pre:"5 rounds"}],
-          foot:"<b>For example, Level 2 is a 30 second dead hang plus 5 scap pull-ups.</b> Find your row in the levels table for the rest."},
-        { label:"Finisher", name:"In Pairs — 20-15-10", how:"You go, I go on each exercise. Finish one movement before moving to the next.",
-          moves:[
-            {pos:"1", name:"DB Snatches", pre:"20-15-10"},
-            {pos:"2", name:"Abmat Sit Ups", pre:"20-15-10"}
-          ]}
-      ]},
-
-    { day:"Wed", date:"21 Oct", kindLabel:"Strength",
-      title:"Rows + Bench",
-      tags:["Barbell · Dumbbells · Kettlebells","Volume day"],
+    { day:"Mon", date:"26 Oct", kindLabel:"Strength",
+      title:"Rows + Incline Bench",
+      tags:["Barbell · Dumbbells · Bands · Plates","Add on last week"],
       blocks:[
         { label:"Block A", name:"Press & Pull", how:"Four sets of each.",
           moves:[
-            {name:"Barbell Bent Over Row", pre:"4 × 8"},
-            {name:"DB Bench Press", pre:"4 × 8"}
-          ]},
-        { label:"Block B", name:"Accessories",
+            {name:"Barbell Bent Over Row", pre:"4 × 8", note:"Add on last week"},
+            {name:"Incline DB Bench Press", pre:"4 × 8"}
+          ],
+          foot:"<b>Rows:</b> same 4 × 8 as last Wednesday — put a little more on the bar."},
+        { label:"Block B", name:"30/20 Intervals", how:"30s work / 20s rest · 2 rounds.",
           moves:[
-            {name:"KB Gorilla Rows", pre:"3 × 16"},
-            {name:"Loaded Carry", pre:"3 × 40m"}
+            {pos:"1", name:"Resistance Band Biceps Curls", pre:"30 / 20"},
+            {pos:"2", name:"Bridged KB Pull Overs", pre:"30 / 20"},
+            {pos:"3", name:"Plate Overhead High Knees", pre:"30 / 20"}
           ]}
       ]},
 
-    { day:"Thu", date:"22 Oct", kindLabel:"Bootcamp 45",
-      title:"Rows & Holds",
-      tags:[{text:"Couch to Pull Up · 4/8",mark:true},"45 minutes","Work from your level"],
+    { day:"Tue", date:"27 Oct", kindLabel:"Bootcamp 45",
+      title:"Hang & Lower",
+      tags:[{text:"Couch to Pull Up · 5/8",mark:true},"45 minutes","Work from your level"],
       jump:true,
       blocks:[
-        { label:"Main piece", name:"Superset — Every 2 Minutes × 3 Rounds", how:"Straight from the row into the hold with minimal rest, then rest what's left of the two minutes.",
+        { label:"Main piece", name:"Every 90s × 4 Rounds", how:"Your level sets the work. Do it, then rest what's left of the 90 seconds.",
+          moves:[{name:"Hang & Lower", sub:"See your level below", pre:"4 rounds"}],
+          foot:"<b>For example, Level 2 is a 30 second dead hang plus 5 scap pull-ups, then rest.</b> Find your row in the levels table for the rest."},
+        { label:"Finisher", name:"AMRAP 5 Minutes",
           moves:[
-            {pos:"A1", name:"Row Variation", sub:"See your level below", pre:"Per level"},
-            {pos:"A2", name:"Hold Variation", sub:"See your level below", pre:"Per level"}
-          ],
-          foot:"<b>Coaches will walk through the variations in class.</b> The rest goes at the end of the pair, not in the middle of it."},
-        { label:"Ab work", name:"Eight Sets", how:"Treat the whole thing as eight sets. 20–30 seconds rest after every one.",
-          moves:[
-            {pos:"1", name:"Low Plank", pre:"2 × 30s"},
-            {pos:"2", name:"Single Leg Glute Bridges", sub:"Each side", pre:"2 × 10"},
-            {pos:"3", name:"Reverse Crunch with Leg Extension", pre:"2 × 10"},
-            {pos:"4", name:"Russian Twists", pre:"2 × 30"}
+            {pos:"1", name:"KB Swings", pre:"× 12"},
+            {pos:"2", name:"High Plank", pre:"30s"}
           ]}
       ]},
 
-    { day:"Fri", date:"23 Oct", kindLabel:"Strength",
-      title:"Deadlift + Sleds",
-      tags:["Barbell · Sled","Percentage work"],
+    { day:"Wed", date:"28 Oct", kindLabel:"Strength",
+      title:"Deadlift + Glutes",
+      tags:["Barbell · Box","Percentage work"],
       blocks:[
-        { label:"Block A", name:"Deadlift", how:"Five sets of five.",
-          moves:[{name:"Barbell Deadlift", pre:"5 × 5", note:"75% of 1RM"}]},
-        { label:"Block B", name:"Sled Drags — As A Class",
-          moves:[{name:"Sled Drags", pre:"10m"}]}
-      ]},
-
-    { day:"Sat", date:"24 Oct", kindLabel:"Conditioning",
-      title:"There And Back",
-      tags:["Kettlebells · Dumbbells · Box","For time"],
-      blocks:[
-        { label:"First half", name:"Down The Order", how:"Straight through, no rest between movements.",
+        { label:"Block A", name:"Deadlift", how:"Five sets of four.",
+          moves:[{name:"Barbell Deadlift", pre:"5 × 4", note:"77.5% of 1RM"}]},
+        { label:"Block B", name:"Superset × 4 Sets", how:"Back to back, then rest.",
           moves:[
-            {pos:"1", name:"KB Swings", pre:"× 40"},
-            {pos:"2", name:"DB Shoulder to Overhead", pre:"× 30"},
-            {pos:"3", name:"Wall Balls", pre:"× 10"},
-            {pos:"4", name:"Press Ups", pre:"× 30"},
-            {pos:"5", name:"Box Step Overs", pre:"× 40"}
-          ]},
-        { label:"Second half", name:"Back Up The Order", how:"The same five movements in reverse.",
-          moves:[
-            {pos:"1", name:"Box Step Overs", pre:"× 40"},
-            {pos:"2", name:"Press Ups", pre:"× 30"},
-            {pos:"3", name:"Wall Balls", pre:"× 10"},
-            {pos:"4", name:"DB Shoulder to Overhead", pre:"× 30"},
-            {pos:"5", name:"KB Swings", pre:"× 40"}
+            {name:"Step Ups", pre:"× 12"},
+            {name:"Hip Thrust Hold", pre:"40s"}
           ],
-          foot:"<b>3 minutes rest between the halves.</b> 300 reps in total — the second half is where the pacing in the first half shows up."}
+          foot:"<b>90 seconds rest between rounds.</b>"}
       ]},
 
-    { day:"Sun", date:"25 Oct", kindLabel:"Rest", title:"Rest Day", rest:true }
+    { day:"Thu", date:"29 Oct", kindLabel:"Bootcamp 45",
+      title:"Rows & Holds",
+      tags:[{text:"Couch to Pull Up · 6/8",mark:true},"45 minutes","Add reps on the row"],
+      jump:true,
+      blocks:[
+        { label:"Main piece", name:"Superset — Every 2 Minutes × 4 Rounds", how:"Straight from the row into the hold with minimal rest, then rest what's left of the two minutes.",
+          moves:[
+            {pos:"A1", name:"Row Variation", sub:"See your level below", pre:"+1–2 reps"},
+            {pos:"A2", name:"Hold Variation", sub:"See your level below", pre:"Per level"}
+          ],
+          foot:"<b>Add 1–2 reps on your row from last week.</b> If you were doing 8 TRX rows, it's 10 now. Coaches will walk through the variations in class."},
+        { label:"Finisher", name:"For Time — 3-6-9-12", how:"3 of each, then 6, then 9, then 12.",
+          moves:[
+            {pos:"1", name:"Squat Jumps", pre:"3-6-9-12"},
+            {pos:"2", name:"Jumping Jacks", pre:"3-6-9-12"}
+          ]}
+      ]},
+
+    { day:"Fri", date:"30 Oct", kindLabel:"Halloween",
+      title:"Halloween Workout 🎃",
+      tags:[{text:"Fancy dress optional — but encouraged",mark:true},"Bodyweight · Dumbbells"],
+      blocks:[
+        { label:"Main piece", name:"Unlucky 13s", how:"13 minute AMRAP. 13 reps of everything.",
+          moves:[
+            {pos:"1", name:"Pumpkin Push Ups 🎃", pre:"× 13"},
+            {pos:"2", name:"Zombie Sit Ups 🧟", pre:"× 13"},
+            {pos:"3", name:"DB Grave Diggers ☠️", pre:"× 13"},
+            {pos:"4", name:"Undead Bugs 🧛", pre:"× 13"}
+          ]},
+        { label:"Then", name:"Cauldron Stirring 🧙", how:"Three sets of 45 seconds on each side.",
+          moves:[{name:"Cauldron Stirring 🧙", sub:"Each side", pre:"3 × 45s"}]},
+        { label:"Finisher", name:"Death By 💀", how:"One rep in the first minute, two in the second, three in the third — keep going until you can't finish inside the minute.",
+          moves:[
+            {pos:"Trick", name:"Burpees", pre:"+1 a minute"},
+            {pos:"Treat", name:"Shuttle Runs", pre:"+1 a minute"}
+          ]}
+      ]},
+
+    { day:"Sat", date:"31 Oct", kindLabel:"Strength",
+      title:"Box Squats + Circuit",
+      tags:["Barbell · Rower · Rope","Climbing work windows"],
+      blocks:[
+        { label:"Block A", name:"Box Squats", how:"Four sets of five. Two to three seconds down to the box.",
+          moves:[{name:"Barbell Box Squat", sub:"2–3 second negative", pre:"4 × 5"}]},
+        { label:"Block B", name:"Body Rows",
+          moves:[{name:"Underhand Grip Body Rows", pre:"4 × 6-8"}]},
+        { label:"Block C", name:"Circuit × 3 Rounds", how:"The work window grows each round. 30 seconds rest after every exercise, every round.",
+          moves:[
+            {pos:"1", name:"Rower", pre:"30 · 45 · 60s"},
+            {pos:"2", name:"Russian Twists", pre:"30 · 45 · 60s"},
+            {pos:"3", name:"Skipping", pre:"30 · 45 · 60s"},
+            {pos:"4", name:"Shoulder Taps", pre:"30 · 45 · 60s"}
+          ],
+          foot:"<b>Round 1 is 30s per exercise, round 2 is 45s, round 3 is 60s.</b> Fifteen minutes end to end."}
+      ]},
+
+    { day:"Sun", date:"1 Nov", kindLabel:"Rest", title:"Rest Day", rest:true }
   ],
 
   levels:{
@@ -436,12 +437,11 @@ const WEEK = {
     ["Flexed-arm hang","Chin held over the bar with the arms bent. Also called a chin over bar hold."],
     ["Scap pull-up","Hanging with straight arms, pulling the shoulder blades down and back without bending the elbows. Small movement, big payoff."],
     ["Negative","Only the lowering half of the rep, done slowly. Step or jump up to the top, then fight the way down."],
-    ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
+    ["AMRAP","As many rounds as possible in the time given."],
+    ["Death By","Minute one is 1 rep, minute two is 2, and so on. You're out when you can't finish the reps inside the minute."],
     ["For time","Complete the work as fast as you can while the form holds up."],
-    ["Leg Overs","Lying down, bell held overhead, taking one leg at a time across the body."],
-    ["Pull Throughs","Bell on the floor between your feet, hinge and pass it behind and through from hand to hand."],
-    ["Gorilla Row","Bent over a pair of bells on the floor, rowing one at a time while the other stays down as a brace."],
-    ["Each side","Do the full set on one side, then repeat on the other."],
+    ["Box squat","Sit back to a box under control, pause lightly, then drive up. The box sets your depth every rep."],
+    ["Bridged pull over","Lying with hips held up in a glute bridge while you take the bell over your head and back."],
     ["1RM","The heaviest single rep you can lift. The percentages are worked off this."]
   ]
 };
