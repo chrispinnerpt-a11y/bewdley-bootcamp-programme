@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 9 November</title>
+<title>Bewdley Bootcamp — Week of 16 November</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,7 +243,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 9 – Sun 15 Nov</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 16 – Sun 22 Nov</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -291,118 +291,121 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 9 – Sun 15 Nov",
+  range:"Mon 16 – Sun 22 Nov",
   days:[
-    { day:"Mon", date:"9 Nov", kindLabel:"Conditioning",
-      title:"Partners + Threes",
-      tags:["Kettlebells · Dumbbells","Partner session"],
+    { day:"Mon", date:"16 Nov", kindLabel:"Strength",
+      title:"Rows + Birthday Burpees",
+      tags:["Dumbbells · Bodyweight","Pulling day"],
       blocks:[
-        { label:"Main piece", name:"In Pairs — 50-40-30-20-10", how:"You go, I go. 20 minute time cap.",
+        { label:"Block A", name:"Rows",
           moves:[
-            {pos:"1", name:"Alternating Gorilla Rows", pre:"50-40-30-20-10"},
-            {pos:"2", name:"Alternating Lunges", pre:"50-40-30-20-10"},
-            {pos:"3", name:"Alternating DB Snatches", pre:"50-40-30-20-10"}
-          ],
-          foot:"<b>20 minute cap.</b> Wherever you are when the clock stops, that's your score."},
-        { label:"Finisher", name:"In Threes × 3 Rounds", how:"One of you on each station. The jumping jacks are the timer — when they hit 25, everyone moves round.",
+            {name:"DB Single Arm Row", sub:"Each side", pre:"4 × 5"},
+            {name:"Body Rows", pre:"4 × 4"}
+          ]},
+        { label:"Finisher", name:"Birthday Burpees — 5 Rounds For Time",
           moves:[
-            {pos:"1", name:"High Plank", pre:"Hold"},
-            {pos:"2", name:"Wall Sit", pre:"Hold"},
-            {pos:"3", name:"Jumping Jacks", sub:"The timer", pre:"× 25"}
-          ],
-          foot:"<b>60 seconds rest after a full round</b> — once all three of you have done every station."}
+            {pos:"1", name:"Burpees", pre:"× 8"},
+            {pos:"2", name:"Single DB Curls", pre:"× 15"}
+          ]}
       ]},
 
-    { day:"Tue", date:"10 Nov", kindLabel:"Bootcamp 45",
+    { day:"Tue", date:"17 Nov", kindLabel:"Bootcamp 45",
       title:"The Engine Room",
-      tags:[{text:"The Engine Room · 1/6",mark:true},"45 minutes","Rower · Shuttles"],
+      tags:[{text:"The Engine Room · 3/6",mark:true},"45 minutes","Rower · Shuttles"],
       blocks:[
-        { label:"Main piece", name:"Every 6 Minutes × 4 Rounds",
+        { label:"Main piece", name:"Every 5 Minutes × 4 Rounds",
           moves:[
             {pos:"1", name:"Row", pre:"200 / 250m"},
             {pos:"2", name:"Shuttle Runs", pre:"× 9"},
             {pos:"3", name:"Low Plank", pre:"45s"}
           ],
-          foot:"<b>Whatever's left of the six minutes is your rest.</b> Aim to hold the same row pace in round four as round one."}
+          foot:"<b>Same work as session 1 — the window drops from 6 minutes to 5.</b> That's a minute less rest every round, so hold your row pace and get moving on the shuttles."}
       ]},
 
-    { day:"Wed", date:"11 Nov", kindLabel:"Strength",
-      title:"Pendlay Rows + Press",
-      tags:["Barbell · Dumbbells","Upper body"],
+    { day:"Wed", date:"18 Nov", kindLabel:"Strength",
+      title:"Heavy Deadlifts",
+      tags:["Barbell","Percentage work"],
       blocks:[
-        { label:"Block A", name:"Pendlay Row", how:"Five sets of five. Every rep starts dead on the floor.",
-          moves:[{name:"Barbell Pendlay Row", pre:"5 × 5"}]},
-        { label:"Block B", name:"Superset × 3 Sets", how:"Back to back.",
+        { label:"Warm up", name:"Build Up", how:"Four sets of 3–5 reps, adding weight each set.",
+          moves:[{name:"Barbell Deadlift", sub:"Loading up to your working weight", pre:"4 × 3-5"}]},
+        { label:"Working sets", name:"Heavy Doubles, Then Back-Off Sets",
           moves:[
-            {name:"DB Half Kneeling Press", sub:"Each side", pre:"× 6"},
-            {name:"Tricep Dips", pre:"× 10-12"}
-          ]},
-        { label:"Finisher", name:"20s On / 20s Off × 3 Rounds",
-          moves:[
-            {pos:"1", name:"Russian Twists", pre:"20 / 20"},
-            {pos:"2", name:"Mountain Climbers", pre:"20 / 20"}
-          ]}
+            {pos:"1", name:"Barbell Deadlift", pre:"3 × 2", note:"87.5% of 1RM"},
+            {pos:"2", name:"Barbell Deadlift", pre:"2 × 4", note:"77.5% of 1RM"}
+          ],
+          foot:"<b>The doubles are the heaviest deadlifts of the block.</b> Full rest between sets — every rep should look the same as the first."}
       ]},
 
-    { day:"Thu", date:"12 Nov", kindLabel:"Bootcamp 45",
+    { day:"Thu", date:"19 Nov", kindLabel:"Bootcamp 45",
       title:"The Engine Room",
-      tags:[{text:"The Engine Room · 2/6",mark:true},"45 minutes","Rower · Box · Kettlebells · Plates"],
+      tags:[{text:"The Engine Room · 4/6",mark:true},"45 minutes","Rower · Box · Kettlebells · Plates"],
       blocks:[
-        { label:"Main piece", name:"60s Work / 60s Rest × 2 Rounds", how:"A minute on each station, a minute off. Sixteen minutes in total.",
+        { label:"Main piece", name:"60s Work / 45s Rest × 2 Rounds", how:"A minute on each station, 45 seconds off. Fourteen minutes in total.",
           moves:[
-            {pos:"1", name:"Row", pre:"60 / 60"},
-            {pos:"2", name:"Step Ups", pre:"60 / 60"},
-            {pos:"3", name:"KB Suitcase High Knees", pre:"60 / 60"},
-            {pos:"4", name:"Plate Ground to Overhead", pre:"60 / 60"}
+            {pos:"1", name:"Row", pre:"60 / 45"},
+            {pos:"2", name:"Step Ups", pre:"60 / 45"},
+            {pos:"3", name:"KB Suitcase High Knees", pre:"60 / 45"},
+            {pos:"4", name:"Plate Ground to Overhead", pre:"60 / 45"}
+          ],
+          foot:"<b>Same stations as session 2 — the rest drops from 60 seconds to 45.</b>"},
+        { label:"Abs", name:"Three Sets Each",
+          moves:[
+            {pos:"1", name:"Plank Down Ups", pre:"3 × 10"},
+            {pos:"2", name:"Reverse Crunches", pre:"3 × 15"},
+            {pos:"3", name:"Back Extensions", pre:"3 × 15"}
           ]}
       ]},
 
-    { day:"Fri", date:"13 Nov", kindLabel:"Strength",
-      title:"Deadlift + Tri-Set",
-      tags:["Barbell · Dumbbells · Kettlebells","Percentage work"],
+    { day:"Fri", date:"20 Nov", kindLabel:"Strength",
+      title:"Squats + Calorie Ladder",
+      tags:["Barbell · Dumbbells · Rower · Med Ball","Percentage work"],
       blocks:[
-        { label:"Block A", name:"Deadlift", how:"Five sets of three.",
-          moves:[{name:"Barbell Deadlift", pre:"5 × 3", note:"82.5% of 1RM"}]},
-        { label:"Block B", name:"Tri-Set × 3 Sets", how:"All three back to back, then rest.",
+        { label:"Block A", name:"Back Squats", how:"Three sets of five.",
+          moves:[{name:"Barbell Back Squat", pre:"3 × 5", note:"75% of 1RM"}]},
+        { label:"Block B", name:"DB RDL",
+          moves:[{name:"DB RDL", pre:"3 × 8"}]},
+        { label:"Finisher", name:"Climbing Row — 4 Rounds", how:"The row climbs each round — 8, 12, 16, 20 cals. The med ball work stays at 5 and 5.",
           moves:[
-            {pos:"1", name:"Split Squats", sub:"Each side", pre:"× 5"},
-            {pos:"2", name:"KB Swings", pre:"× 10"},
-            {pos:"3", name:"Farmers Carry", pre:"40m"}
-          ]}
+            {pos:"1", name:"Row", pre:"8-12-16-20 cals"},
+            {pos:"2", name:"Med Ball Slams", pre:"× 5"},
+            {pos:"3", name:"Med Ball Chest Pass", pre:"× 5"}
+          ],
+          foot:"<b>Round 1 is 8 cals, 5 slams, 5 passes. Round 2 is 12, 5, 5.</b> And so on up to 20."}
       ]},
 
-    { day:"Sat", date:"14 Nov", kindLabel:"Strength",
-      title:"EMOM + 40/20",
-      tags:["Barbell · Dumbbells · Kettlebells","Box squats to a 16 inch box"],
+    { day:"Sat", date:"21 Nov", kindLabel:"Strength",
+      title:"Bench + Supersets",
+      tags:["Barbell · Dumbbells · Kettlebells · Plates","Two supersets"],
       blocks:[
-        { label:"Block A", name:"EMOM 16 Minutes", how:"Four movements, one a minute, four rounds. The fourth minute is rest.",
+        { label:"Block A", name:"Superset × 3 Sets",
           moves:[
-            {pos:"1", name:"Barbell Box Squats", sub:"16 inch box", pre:"× 5"},
-            {pos:"2", name:"KB SDLHP", pre:"× 10"},
-            {pos:"3", name:"DB Narrow Grip Bench Press", pre:"× 15"},
-            {pos:"4", name:"Rest", pre:"60s"}
+            {name:"Bench Press", pre:"× 3"},
+            {name:"Tricep Dips", pre:"× 10"}
           ]},
-        { label:"Finisher", name:"40s On / 20s Off × 3 Rounds", how:"Nine minutes.",
+        { label:"Block B", name:"Superset × 3 Sets",
           moves:[
-            {pos:"1", name:"KB Pull Throughs", pre:"40 / 20"},
-            {pos:"2", name:"DB Hammer Curl & Press", sub:"Alternating", pre:"40 / 20"},
-            {pos:"3", name:"KB Drop Rows", pre:"40 / 20"}
+            {name:"Split Squats", sub:"Each side", pre:"× 5"},
+            {name:"Step Up with High Knee", pre:"× 10"}
+          ]},
+        { label:"Finisher", name:"3 Rounds For Time",
+          moves:[
+            {pos:"1", name:"KB Swings", pre:"× 15"},
+            {pos:"2", name:"Plate Rows", pre:"× 15"},
+            {pos:"3", name:"Jumping Jacks", pre:"× 30"}
           ]}
       ]},
 
-    { day:"Sun", date:"15 Nov", kindLabel:"Rest", title:"Rest Day", rest:true }
+    { day:"Sun", date:"22 Nov", kindLabel:"Rest", title:"Rest Day", rest:true }
   ],
 
   glossary:[
-    ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
-    ["50-40-30-20-10","Five rounds with the reps coming down each time."],
-    ["EMOM","Every minute on the minute. Start the next movement when the next minute begins."],
-    ["Pendlay Row","A barbell row where the bar goes back to the floor and stops dead between every rep."],
-    ["Tri-set","Three exercises back to back before you rest."],
-    ["SDLHP","Sumo deadlift high pull. Wide stance, pull from the floor to under the chin, elbows leading."],
-    ["Gorilla Row","Bent over a pair of bells on the floor, rowing one at a time while the other stays down as a brace."],
+    ["Back-off sets","Lighter sets after the heavy work. More reps at less weight, to get quality volume in once you're warmed up."],
+    ["For time","Complete the work as fast as you can while the form holds up."],
+    ["Plank Down Ups","From a high plank, drop to your forearms one arm at a time, then press back up."],
+    ["Back Extensions","Hips supported, lower your chest towards the floor and lift back up to a straight line."],
+    ["Chest Pass","Med ball held at your chest, thrown hard and straight out — at a wall or a partner."],
     ["GTOH","Ground to overhead. Any way you like, as long as it starts on the floor and finishes locked out."],
-    ["Box squat","Sit back to a box under control, pause lightly, then drive up. The box sets your depth every rep."],
+    ["RDL","Romanian deadlift. Push the hips back with soft knees."],
     ["Each side","Do the full set on one side, then repeat on the other."],
     ["1RM","The heaviest single rep you can lift. The percentages are worked off this."]
   ]
