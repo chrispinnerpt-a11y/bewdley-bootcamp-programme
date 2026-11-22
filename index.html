@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bewdley Bootcamp — Week of 16 November</title>
+<title>Bewdley Bootcamp — Week of 23 November</title>
 <meta name="description" content="This week's training at Bewdley Bootcamp.">
 <meta name="theme-color" content="#F5F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -243,7 +243,7 @@ p{margin:0 0 var(--sp-4)}
   <div class="bb-wrap">
     <span class="bb-eyebrow wk-mast__eyebrow">This week's training</span>
     <h1 class="wk-mast__mark"><span>Bewdley</span><span>Bootcamp</span></h1>
-    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 16 – Sun 22 Nov</b> · <span id="wk-count"></span></p>
+    <p class="wk-mast__meta">Week of <b id="wk-range">Mon 23 – Sun 29 Nov</b> · <span id="wk-count"></span></p>
     <a class="wk-cta wk-cta--top" id="wk-track-top" href="#" target="_blank" rel="noopener">Click Here to Log Your Weights</a>
   </div>
 </header>
@@ -291,123 +291,129 @@ p{margin:0 0 var(--sp-4)}
    ======================================================================= */
 const WEEK = {
   trackUrl:"https://track.bewdleybootcamp.co.uk",
-  range:"Mon 16 – Sun 22 Nov",
+  range:"Mon 23 – Sun 29 Nov",
   days:[
-    { day:"Mon", date:"16 Nov", kindLabel:"Strength",
-      title:"Rows + Birthday Burpees",
-      tags:["Dumbbells · Bodyweight","Pulling day"],
+    { day:"Mon", date:"23 Nov", kindLabel:"Strength",
+      title:"Deadlift Pre-Test",
+      tags:[{text:"1RM pre-test · full test Mon 30 Nov",mark:true},"Barbell","Partner finisher"],
       blocks:[
-        { label:"Block A", name:"Rows",
+        { label:"Block A", name:"Deadlift — 5-3-1-1-1", how:"Five sets, climbing. A run-through for next Monday's full 1RM test.",
+          moves:[{name:"Barbell Deadlift", pre:"5-3-1-1-1", note:"70 · 80 · 85 · 90 · 90%"}],
+          foot:"<b>Next Monday, 30 November, is the full 1RM test.</b> Today's 90% singles should move cleanly — log how they felt, it'll help decide where you open next week."},
+        { label:"Finisher", name:"In Pairs — 3 Rounds Each", how:"You go, I go. One partner does the whole round, then swap.",
           moves:[
-            {name:"DB Single Arm Row", sub:"Each side", pre:"4 × 5"},
-            {name:"Body Rows", pre:"4 × 4"}
-          ]},
-        { label:"Finisher", name:"Birthday Burpees — 5 Rounds For Time",
-          moves:[
-            {pos:"1", name:"Burpees", pre:"× 8"},
-            {pos:"2", name:"Single DB Curls", pre:"× 15"}
+            {pos:"1", name:"Deadlifts", pre:"× 8", note:"50% of 1RM"},
+            {pos:"2", name:"Press Ups", pre:"× 8"},
+            {pos:"3", name:"High Plank", pre:"30s"}
           ]}
       ]},
 
-    { day:"Tue", date:"17 Nov", kindLabel:"Bootcamp 45",
+    { day:"Tue", date:"24 Nov", kindLabel:"Bootcamp 45",
       title:"The Engine Room",
-      tags:[{text:"The Engine Room · 3/6",mark:true},"45 minutes","Rower · Shuttles"],
+      tags:[{text:"The Engine Room · 5/6",mark:true},"45 minutes","Pick your option"],
       blocks:[
-        { label:"Main piece", name:"Every 5 Minutes × 4 Rounds",
+        { label:"Main piece", name:"Every 5 Minutes × 4 Rounds", how:"Two options on every line. If last week felt comfortable, take the longer one.",
           moves:[
             {pos:"1", name:"Row", pre:"200 / 250m"},
-            {pos:"2", name:"Shuttle Runs", pre:"× 9"},
-            {pos:"3", name:"Low Plank", pre:"45s"}
+            {pos:"2", name:"Shuttle Runs", pre:"× 9 / 15"},
+            {pos:"3", name:"Low Plank", pre:"45 / 60s"}
           ],
-          foot:"<b>Same work as session 1 — the window drops from 6 minutes to 5.</b> That's a minute less rest every round, so hold your row pace and get moving on the shuttles."}
+          foot:"<b>Same 5 minute window as last week — the work goes up instead.</b> Pick your option before round one and stick with it for all four."}
       ]},
 
-    { day:"Wed", date:"18 Nov", kindLabel:"Strength",
-      title:"Heavy Deadlifts",
-      tags:["Barbell","Percentage work"],
+    { day:"Wed", date:"25 Nov", kindLabel:"Conditioning",
+      title:"Two AMRAPs",
+      tags:["Bodyweight · Rope · Dumbbells · Kettlebells · Power Bag","20 minutes of work"],
       blocks:[
-        { label:"Warm up", name:"Build Up", how:"Four sets of 3–5 reps, adding weight each set.",
-          moves:[{name:"Barbell Deadlift", sub:"Loading up to your working weight", pre:"4 × 3-5"}]},
-        { label:"Working sets", name:"Heavy Doubles, Then Back-Off Sets",
+        { label:"AMRAP 1", name:"10 Minutes",
           moves:[
-            {pos:"1", name:"Barbell Deadlift", pre:"3 × 2", note:"87.5% of 1RM"},
-            {pos:"2", name:"Barbell Deadlift", pre:"2 × 4", note:"77.5% of 1RM"}
-          ],
-          foot:"<b>The doubles are the heaviest deadlifts of the block.</b> Full rest between sets — every rep should look the same as the first."}
-      ]},
-
-    { day:"Thu", date:"19 Nov", kindLabel:"Bootcamp 45",
-      title:"The Engine Room",
-      tags:[{text:"The Engine Room · 4/6",mark:true},"45 minutes","Rower · Box · Kettlebells · Plates"],
-      blocks:[
-        { label:"Main piece", name:"60s Work / 45s Rest × 2 Rounds", how:"A minute on each station, 45 seconds off. Fourteen minutes in total.",
+            {pos:"1", name:"Air Squats", pre:"× 10"},
+            {pos:"2", name:"Sit Ups", pre:"× 10"},
+            {pos:"3", name:"Skips", pre:"30-60"}
+          ]},
+        { label:"AMRAP 2", name:"10 Minutes",
           moves:[
-            {pos:"1", name:"Row", pre:"60 / 45"},
-            {pos:"2", name:"Step Ups", pre:"60 / 45"},
-            {pos:"3", name:"KB Suitcase High Knees", pre:"60 / 45"},
-            {pos:"4", name:"Plate Ground to Overhead", pre:"60 / 45"}
-          ],
-          foot:"<b>Same stations as session 2 — the rest drops from 60 seconds to 45.</b>"},
-        { label:"Abs", name:"Three Sets Each",
-          moves:[
-            {pos:"1", name:"Plank Down Ups", pre:"3 × 10"},
-            {pos:"2", name:"Reverse Crunches", pre:"3 × 15"},
-            {pos:"3", name:"Back Extensions", pre:"3 × 15"}
+            {pos:"1", name:"Alternating DB Floor Press", pre:"× 10"},
+            {pos:"2", name:"Alternating Gorilla Rows", pre:"× 10"},
+            {pos:"3", name:"Power Bag Clean & Press", pre:"× 5"}
           ]}
       ]},
 
-    { day:"Fri", date:"20 Nov", kindLabel:"Strength",
-      title:"Squats + Calorie Ladder",
-      tags:["Barbell · Dumbbells · Rower · Med Ball","Percentage work"],
+    { day:"Thu", date:"26 Nov", kindLabel:"Bootcamp 45",
+      title:"The Engine Room",
+      tags:[{text:"The Engine Room · 6/6",mark:true},"Last session of the block","45 minutes"],
       blocks:[
-        { label:"Block A", name:"Back Squats", how:"Three sets of five.",
-          moves:[{name:"Barbell Back Squat", pre:"3 × 5", note:"75% of 1RM"}]},
-        { label:"Block B", name:"DB RDL",
-          moves:[{name:"DB RDL", pre:"3 × 8"}]},
-        { label:"Finisher", name:"Climbing Row — 4 Rounds", how:"The row climbs each round — 8, 12, 16, 20 cals. The med ball work stays at 5 and 5.",
+        { label:"Main piece", name:"60s Work / 30s Rest × 2 Rounds", how:"A minute on each station, 30 seconds off. Twelve minutes in total.",
           moves:[
-            {pos:"1", name:"Row", pre:"8-12-16-20 cals"},
-            {pos:"2", name:"Med Ball Slams", pre:"× 5"},
-            {pos:"3", name:"Med Ball Chest Pass", pre:"× 5"}
+            {pos:"1", name:"Row", pre:"60 / 30"},
+            {pos:"2", name:"Step Ups", pre:"60 / 30"},
+            {pos:"3", name:"KB Suitcase High Knees", pre:"60 / 30"},
+            {pos:"4", name:"Plate Ground to Overhead", pre:"60 / 30"}
           ],
-          foot:"<b>Round 1 is 8 cals, 5 slams, 5 passes. Round 2 is 12, 5, 5.</b> And so on up to 20."}
+          foot:"<b>Same stations as session 2 — rest is down to 30 seconds.</b> It started at 60. That's the block."},
+        { label:"Finisher", name:"Mexican Waves — Groups of 3–4", how:"Go one after another round the group, like a wave. Everyone does 1, then everyone does 2, and so on up.",
+          moves:[
+            {pos:"1", name:"Press Up Mexican Wave", pre:"1-2-3-4-5"},
+            {pos:"2", name:"KB Swings Mexican Wave", pre:"5-10-15-20"}
+          ]}
       ]},
 
-    { day:"Sat", date:"21 Nov", kindLabel:"Strength",
-      title:"Bench + Supersets",
-      tags:["Barbell · Dumbbells · Kettlebells · Plates","Two supersets"],
+    { day:"Fri", date:"27 Nov", kindLabel:"Strength",
+      title:"Rows + Shoulders",
+      tags:["Barbell · Dumbbells · Kettlebells · Plates","Upper body"],
       blocks:[
-        { label:"Block A", name:"Superset × 3 Sets",
-          moves:[
-            {name:"Bench Press", pre:"× 3"},
-            {name:"Tricep Dips", pre:"× 10"}
-          ]},
+        { label:"Block A", name:"Barbell Row",
+          moves:[{name:"Barbell Row", pre:"3 × 6"}]},
         { label:"Block B", name:"Superset × 3 Sets",
           moves:[
-            {name:"Split Squats", sub:"Each side", pre:"× 5"},
-            {name:"Step Up with High Knee", pre:"× 10"}
+            {name:"DB Pull Overs", pre:"× 10"},
+            {name:"KB Horn Grip Curls", pre:"× 10"}
           ]},
-        { label:"Finisher", name:"3 Rounds For Time",
+        { label:"Block C", name:"Superset × 3 Sets",
           moves:[
-            {pos:"1", name:"KB Swings", pre:"× 15"},
-            {pos:"2", name:"Plate Rows", pre:"× 15"},
-            {pos:"3", name:"Jumping Jacks", pre:"× 30"}
+            {name:"DB Front Raises", pre:"× 10"},
+            {name:"Plate Reverse Flys", pre:"× 10"}
           ]}
       ]},
 
-    { day:"Sun", date:"22 Nov", kindLabel:"Rest", title:"Rest Day", rest:true }
+    { day:"Sat", date:"28 Nov", kindLabel:"Strength",
+      title:"Every 90s + Circuit",
+      tags:["Bar · Dumbbells · Kettlebells · Med Ball","Alternating sets"],
+      blocks:[
+        { label:"Block A", name:"Every 90s — 4 Sets Each", how:"Alternate between the two. Eight intervals, twelve minutes.",
+          moves:[
+            {pos:"A", name:"Chin Ups", pre:"× 5"},
+            {pos:"B", name:"Heels Elevated Goblet Squats", pre:"× 8-10"}
+          ]},
+        { label:"Block B", name:"Every 90s — 4 Sets Each", how:"Same again with the second pair.",
+          moves:[
+            {pos:"A", name:"KB Goblet Reverse Lunges", sub:"5 each side", pre:"× 10"},
+            {pos:"B", name:"DB Push Press", pre:"× 8-10"}
+          ]},
+        { label:"Finisher", name:"30s On / 30s Rest × 2 Rounds",
+          moves:[
+            {pos:"1", name:"Shoulder Taps", pre:"30 / 30"},
+            {pos:"2", name:"Wall Balls", pre:"30 / 30"},
+            {pos:"3", name:"Russian Twists", pre:"30 / 30"}
+          ]}
+      ]},
+
+    { day:"Sun", date:"29 Nov", kindLabel:"Rest", title:"Rest Day", rest:true }
   ],
 
   glossary:[
-    ["Back-off sets","Lighter sets after the heavy work. More reps at less weight, to get quality volume in once you're warmed up."],
-    ["For time","Complete the work as fast as you can while the form holds up."],
-    ["Plank Down Ups","From a high plank, drop to your forearms one arm at a time, then press back up."],
-    ["Back Extensions","Hips supported, lower your chest towards the floor and lift back up to a straight line."],
-    ["Chest Pass","Med ball held at your chest, thrown hard and straight out — at a wall or a partner."],
+    ["1RM","The heaviest single rep you can lift. Next Monday is the full test."],
+    ["Pre-test","A run-through at sub-max weights so the real test day holds no surprises."],
+    ["YGIG","You go, I go. One partner works while the other rests, then you swap."],
+    ["AMRAP","As many rounds as possible in the time given."],
+    ["Mexican Wave","Going round the group one person at a time. Each step up in reps happens once everyone's done the last one."],
+    ["Heels elevated","Heels raised on a plate or wedge, so you can sit deeper and stay upright."],
+    ["Horn grip","Holding the kettlebell by the two sides of the handle rather than the middle."],
+    ["Push press","A small dip and drive through the legs to start the weight moving, then press to lockout."],
+    ["Reverse flys","Bent over, arms out wide, squeezing the shoulder blades together."],
+    ["Gorilla Row","Bent over a pair of bells on the floor, rowing one at a time while the other stays down as a brace."],
     ["GTOH","Ground to overhead. Any way you like, as long as it starts on the floor and finishes locked out."],
-    ["RDL","Romanian deadlift. Push the hips back with soft knees."],
-    ["Each side","Do the full set on one side, then repeat on the other."],
-    ["1RM","The heaviest single rep you can lift. The percentages are worked off this."]
+    ["Each side","Do the full set on one side, then repeat on the other."]
   ]
 };
 
